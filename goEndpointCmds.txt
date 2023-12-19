@@ -1,0 +1,57 @@
+==================================================go endpoints commands====================================================
+
+curl -X POST -H "Content-Type: application/json" -d "{\"to_sort\": [[3,2,6],[4,2,8],[6,4,8]]}" http://localhost:8000/process-single
+
+curl -X POST -H "Content-Type: application/json" -d "{\"to_sort\": [[3,2,6],[4,2,8],[6,4,8]]}" http://localhost:8000/process-concurrent
+
+=========================================================go commands=======================================================
+
+1)to intialize go modules:
+   >>>   go mod init <module-name>
+
+2)Download Dependencies:
+   >>>   go mod download
+
+3)Build an executable:
+   >>>   go build     
+(or)
+   >>>   go build -o output-binary
+
+4)Run a Go Program:
+   >>>   go run main.go
+
+5)Install Dependencies:
+   >>>   go install
+
+6)Run go tests:
+   >>>   go test
+(or)
+   >>>   go test ./path/to/package
+
+======================================================Docker commands=====================================================
+
+=====================To create a docker image and a container for it.
+1)To build the docker image:  {defaultSyntax:  docker build [OPTIONS] PATH | URL | - }
+   >>>   docker build -t your-image-name .
+
+#The . (dot) represents the build context. The build context is the set of files and directories that are sent to the Docker daemon for building a Docker image. When you use docker build ., it implies that the build context is the current directory where the command is executed.
+
+2)To run the docker container:
+   >>>   docker run -p 8000:8000 your-image-name
+
+====================To push the docker image to docker hub.
+1)Tag your image:
+   >>>   docker tag your-local-image your-dockerhub-username/your-repo-name:tag
+
+2)Login into docker hub:
+   >>>   docker login
+
+3)Push your image:
+   >>>   docker push your-dockerhub-username/my-go-server:latest
+
+
+docker hub link:
+
+https://hub.docker.com/repository/docker/hemanth0808/sorting_arrays/general
+
+
